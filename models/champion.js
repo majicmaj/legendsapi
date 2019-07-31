@@ -10,7 +10,7 @@ const CharacterSchema = new Schema({
         //Health Points
         health: {
 
-            hp: Number,
+            hp: Number, 
             hpincrement: Number,
             hpregen: Number,
             hpregenincrement: Number

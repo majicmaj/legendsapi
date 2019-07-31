@@ -1,74 +1,81 @@
-const championJSON = require('./data/champion.json')
+const axios = require('axios')
 const championModel = require('../models/champion')
 
 let championData
-championModel.deleteMany({}).then(
-    x => {
-        championData = Object.values(championJSON.data).map(
-            champion => {
-                let schema = {
-                    key: champion.key,
-                    name: champion.name,
-                    title: champion.title,
-                    manaType: champion.partype,
-                    stats: {
-                        //Health Points
-                        health: {
+let championJSON
 
-                            hp: champion.stats.hp,
-                            hpincrement: champion.stats.hpperlevel,
-                            hpregen: champion.stats.hpregen,
-                            hpregenincrement: champion.stats.hpregenperlevel,
+axios.get('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json')
+    .then(r => { return r.data })
+    .then( json => championJSON = json)
+    .then(x => {
+        championModel.deleteMany({}).then(
+            x => {
+                championData = Object.values(championJSON.data).map(
+                    champion => {
+                        let schema = {
+                            key: champion.key,
+                            name: champion.name,
+                            title: champion.title,
+                            manaType: champion.partype,
+                            stats: {
+                                //Health Points
+                                health: {
 
-                        },
-                        //Mana Points
-                        mana: {
+                                    hp: champion.stats.hp,
+                                    hpincrement: champion.stats.hpperlevel,
+                                    hpregen: champion.stats.hpregen,
+                                    hpregenincrement: champion.stats.hpregenperlevel,
 
-                            mp: champion.stats.mp,
-                            mpincrement: champion.stats.mpperlevel,
-                            mpregen: champion.stats.mpregen,
-                            mpregenincrement: champion.stats.mpregenperlevel,
+                                },
+                                //Mana Points
+                                mana: {
 
-                        },
-                        //Attack
-                        attack: {
+                                    mp: champion.stats.mp,
+                                    mpincrement: champion.stats.mpperlevel,
+                                    mpregen: champion.stats.mpregen,
+                                    mpregenincrement: champion.stats.mpregenperlevel,
 
-                            damage: champion.stats.attackdamage,
-                            damageIncrememnt: champion.stats.attackdamageperlevel,
-                            speed: {
-                                offset: champion.stats.attackspeedoffset,
-                                speedIncrement: champion.stats.attackspeedperlevel
-                            },
-                            crit: {
-                                chance: champion.stats.crit,
-                                critIncremment: champion.stats.critperlevel
-                            },
-                            range: champion.stats.attackrange
+                                },
+                                //Attack
+                                attack: {
 
-                        },
-                        //Defense
-                        defense: {
+                                    damage: champion.stats.attackdamage,
+                                    damageIncrememnt: champion.stats.attackdamageperlevel,
+                                    speed: {
+                                        offset: champion.stats.attackspeedoffset,
+                                        speedIncrement: champion.stats.attackspeedperlevel
+                                    },
+                                    crit: {
+                                        chance: champion.stats.crit,
+                                        critIncremment: champion.stats.critperlevel
+                                    },
+                                    range: champion.stats.attackrange
 
-                            armor: {
-                                base: champion.stats.armor,
-                                armorIncrement: champion.stats.armorperlevel
-                            },
-                            magicResist: {
-                                base: champion.stats.spellblock,
-                                magicResistIncrement: champion.stats.spellblockperlevel
+                                },
+                                //Defense
+                                defense: {
+
+                                    armor: {
+                                        base: champion.stats.armor,
+                                        armorIncrement: champion.stats.armorperlevel
+                                    },
+                                    magicResist: {
+                                        base: champion.stats.spellblock,
+                                        magicResistIncrement: champion.stats.spellblockperlevel
+                                    }
+
+                                },
+                                //Other
+                                moveSpeed: champion.stats.movespeed
                             }
-
-                        },
-                        //Other
-                        moveSpeed: champion.stats.movespeed
+                        }
+                        return schema
                     }
-                }
-                return schema
+                )
             }
-        )
-    }
-).then(x => {
-    championModel.collection.insert(championData).then(res => {
-        console.log(res)
+        ).then(x => {
+            championModel.collection.insert(championData).then(res => {
+                console.log(res)
+            })
+        })
     })
-})
