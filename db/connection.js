@@ -1,7 +1,7 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/legend', {
-    useNewUrlParser: true
+mongoose.connect("mongodb://localhost/legend", {
+        useNewUrlParser: true
 })
 
-module.exports = mongoose;
+module.exports = mongoose
