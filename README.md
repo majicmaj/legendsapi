@@ -39,3 +39,26 @@ and accesses the json data inside of it to fullfill the model schemas.
 | Index.js                                    |
 |---------------------------------------------|
 | <img src="https://i.imgur.com/2ZH0IDm.png"> |
+
+##Using the API
+
+| URL         | Path          | Method   | Action  | Description                                             |
+|-------------|---------------|----------|---------|---------------------------------------------------------|
+| `/champion` | `/`           | `GET`    | #index  | List all champions                                      |
+| `/champion` | `/name/:name` | `GET`    | #show   | show specefic champion by name = ${req.params.name}     |
+| `/champion` | `/`           | `POST`   | #create | create new champion with champion = ${req.body}         |
+| `/champion` | `/:name`      | `PUT`    | #edit   | edit specefic champion by name = ${req.params.name}     |
+| `/champion` | `/:name`      | `DELETE` | #delete | Delete a specefic champion by name = ${req.params.name} |
+
+
+| URL     | Path          | Method | Action | Description                             |
+|---------|---------------|--------|--------|-----------------------------------------|
+| `/item` | `/`           | `GET`  | #index | List all items                          |
+| `/item` | `/name/:name` | `GET`  | #show  | show map with name = ${req.params.name} |
+
+
+| URL    | Path          | Method | Action  | Description                             |
+|--------|---------------|--------|---------|-----------------------------------------|
+| `/map` | `/`           | `GET`  | #index  | List all maps                           |
+| `/map` | `/name/:name` | `GET`  | #show   | show map with name = ${req.params.name} |
+| `/map` | `/id/:id`     | `POST` | #showId | show map with _id = ${req.params.id}    |
