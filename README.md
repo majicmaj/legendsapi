@@ -23,11 +23,13 @@ and accesses the json data inside of it to fullfill the model schemas.
 |---------------------------------------------|---------------------------------------------|---------------------------------------------|
 | <img src="https://i.imgur.com/pvz2r3W.png"> | <img src="https://i.imgur.com/LjshXRi.png"> | <img src="https://i.imgur.com/IUd2iI1.png"> |
 ### Routes
-<img src="https://i.imgur.com/An9gy7p.png">
-<img src="https://imgur.com/tqlCC9u.png">
-<img src="https://imgur.com/Chi4MjD.png">
+
+| Champion                                    | Item                                        | Map                                         |
+|---------------------------------------------|---------------------------------------------|---------------------------------------------|
+| <img src="https://i.imgur.com/An9gy7p.png"> | <img src="https://i.imgur.com/tqlCC9u.png"> | <img src="https://i.imgur.com/Chi4MjD.png"> |
 
 ### Controllers
-<img src="https://i.imgur.com/MZfSxwa.png">
-<img src="https://i.imgur.com/OstIrv4.png">
-<img src="https://i.imgur.com/cDxoCKD.png">
+
+| Champion                                    | Item                                        | Map                                         |
+|---------------------------------------------|---------------------------------------------|---------------------------------------------|
+| <img src="https://i.imgur.com/MZfSxwa.png"> | <img src="https://i.imgur.com/OstIrv4.png"> | <img src="https://i.imgur.com/cDxoCKD.png"> |
