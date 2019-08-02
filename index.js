@@ -8,6 +8,8 @@ app.use('/champion', require('./routes/champion'))
 app.use('/item', require('./routes/item'))
 app.use('/map', require('./routes/map'))
 
-const PORT = process.env.PORT || 5000
+app.set("port", process.env.PORT || 8080);
 
-app.listen(PORT, () => console.log(`✅ PORT: ${PORT} 🌟`))
+app.listen(app.get("port"), () => {
+    console.log(`✅ PORT: ${app.get("port")} 🌟`);
+});
