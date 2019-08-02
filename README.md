@@ -33,3 +33,9 @@ and accesses the json data inside of it to fullfill the model schemas.
 | Champion                                    | Item                                        | Map                                         |
 |---------------------------------------------|---------------------------------------------|---------------------------------------------|
 | <img src="https://i.imgur.com/MZfSxwa.png"> | <img src="https://i.imgur.com/OstIrv4.png"> | <img src="https://i.imgur.com/cDxoCKD.png"> |
+
+### App
+
+| Index.js                                    |
+|---------------------------------------------|
+| <img src="https://i.imgur.com/2ZH0IDm.png"> |
