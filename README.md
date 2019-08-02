@@ -40,8 +40,9 @@ and accesses the json data inside of it to fullfill the model schemas.
 |---------------------------------------------|
 | <img src="https://i.imgur.com/2ZH0IDm.png"> |
 
-##Using the API
+## Using the API
 
+### Tables of our REST routes and their corresponding controller actions
 | URL         | Path          | Method   | Action  | Description                                             |
 |-------------|---------------|----------|---------|---------------------------------------------------------|
 | `/champion` | `/`           | `GET`    | #index  | List all champions                                      |
