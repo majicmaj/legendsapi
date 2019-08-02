@@ -63,3 +63,11 @@ and accesses the json data inside of it to fullfill the model schemas.
 | `/map` | `/`           | `GET`  | #index  | List all maps                           |
 | `/map` | `/name/:name` | `GET`  | #show   | show map with name = ${req.params.name} |
 | `/map` | `/id/:id`     | `POST` | #showId | show map with _id = ${req.params.id}    |
+
+## Reflection
+
+### What I learned:
+I feel like while working on this project I learned a lot about seeding a database and manipulating data into a form thats easier to use. 
+
+### Next steps:
+As I continue into the next unit learning React, I'll be coming back here to complete some of the functionality that isn't working to expectation and hpoefully a better interface.
